@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Controllable Space Spacecraft</title>
+   <script src="./js/animacao.js"></script>
+   <script src="./js/teclado.js"></script>
+   <script src="./js/fundo.js"></script>
+   <script src="./js/nave.js"></script>
+   <script src="./js/tiro.js"></script>
+</head>
+
+<body>
+   <canvas id="canvas_nave" width="500" height="500"></canvas>
+   <script>
+		var canvas = document.getElementById("canvas_nave");
+		var context = canvas.getContext("2d");
+		
+		var teclado = new Teclado(document);
+		var animacao = new Animacao(context);
+		
+		var imgNave = new Image();
+		imgNave.src = "img/nave.png";
+        
+        var imgEspaco = new Image ();
+		
+		imgEspaco.src = "img/fundo-espaco.png";
+		
+		var imgEstrelas = new  Image();
+		imgEstrelas.src = "img/fundo-estrelas.png";
+		
+		var imgNuvens = new Image();
+        imgNuvens.src = "img/fundo-nuvens.png";
+        
+        var nave = new Nave(context, teclado , imgNave);
+        
+		var carregadas = 0;
+		var total = 3;
+		
+		imgEspaco.onload = carregando();
+		imgEstrelas.onload = carregando();
+        imgNuvens.onload = carregando();
+        
+		imgNave.onload = function(){
+			nave.x = canvas.width / 7 - imgNave.width / 2;
+			nave.y = canvas.height - imgNave.height;
+			
+			nave.velocidade=10;
+			
+			//animacao.ligar();
+        }
+
+        function carregando (){
+			carregadas++;
+			
+			if(carregadas == total){
+				iniciar();				
+			}
+        }
+        
+        function iniciar(){			
+            //passo- instanciar o fundo 
+			var fundoEspaco = new Fundo(context, imgEspaco);
+			var fundoEstrelas = new Fundo(context, imgEstrelas);
+            var fundoNuvens = new Fundo(context, imgNuvens);
+			
+			//setando as velocidades
+			fundoEspaco.velocidade = 3;
+			fundoEstrelas.velocidade = 7;
+			fundoNuvens.velocidade = 10;
+						
+			animacao.novoSprite(fundoEspaco);
+			animacao.novoSprite(fundoNuvens);
+            animacao.novoSprite(fundoEstrelas);
+            animacao.novoSprite(nave);
+
+			animacao.ligar();				
+		}
+   </script>
+</body>
+
+</html>
