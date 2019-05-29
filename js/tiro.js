@@ -8,8 +8,21 @@ function Tiro(context, nave) {
    this.x = nave.x + nave.imagem.width / 2 - this.largura / 2;
    this.y = nave.y - this.altura;
    this.velocidade = 1;
+   this.numRan = Math.floor(Math.random() * 5);
+
+   if(this.numRan == 0){
+      this.cor = 'red';
+   }else if(this.numRan == 1){
+      this.cor = 'yellow';
+   }else if (this.numRan == 2){
+      this.cor = 'green';
+   }else if(this.numRan == 3){
+      this.cor = 'blue';
+   }else if(this.numRan == 4){
+      this.cor = 'white';
+   }
+
    
-   this.cor = 'red';
 }
 Tiro.prototype = {
    atualizar: function() {
