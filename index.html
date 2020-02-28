@@ -8,10 +8,43 @@
    <script src="./js/fundo.js"></script>
    <script src="./js/nave.js"></script>
    <script src="./js/tiro.js"></script>
+   <link rel="stylesheet" type="text/css" href="./css/styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Quicksand" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-   <canvas id="canvas_nave" width="500" height="500"></canvas>
+	<div class="container">
+		<div class="content">
+			<div class="row">
+				<h1 class="title col-md-12 col-sm-12">Spaceship Controllable</h1>
+			</div>
+			<div class="row">
+				<canvas id="canvas_nave" width="500" height="500 class="col-md-12 col-sm-12"></canvas>
+			</div>
+			<div class="row">
+				<img  class="setas" src="./img/setas.png" width="250" height="250"/>
+			</div>	
+			<hr />
+			<footer>
+				<p class="footer_title">Made by Matheus Binotto</p>
+				<a class="footer_github" href="https://github.com/Binotto/weather-app"><i class="fa fa-github"></i> Github</a>
+				</a>
+				</br>
+				<a class="footer_linkedin" href="https://www.linkedin.com/in/matheus-binotto-a51787143/">
+					<i class="fa fa-linkedin"></i> My Linkedin
+				</a>
+			</footer>
+		</div>
+	</div>
    <script>
 		var canvas = document.getElementById("canvas_nave");
 		var context = canvas.getContext("2d");

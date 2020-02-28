@@ -1,0 +1,44 @@
+body{
+    /* background-color: #343a40; */
+    background-color: white;
+    font-family: 'Audiowide', sans-serif !important;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#canvas_nave{
+    margin-left: 15px;
+}
+.title{
+    margin-top: 150px;
+    font-size: 22px;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.content{
+    width: 500px;
+}
+.setas{
+    margin-left: 140px;
+    margin-right: 140px;
+}
+.fa-github{
+    color: #333;
+}
+.fa-linkedin{
+    color: #2867B2;
+}
+.footer_github{
+    font-size: 22px;
+}
+.footer_linkedin{
+    font-size: 22px;
+}
+.footer_title{
+    font-size: 22px;
+}
